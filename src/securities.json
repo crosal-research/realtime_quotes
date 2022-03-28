@@ -1,0 +1,185 @@
+[
+    {
+        "category": "Equity Index Futures",
+        "ticker": "US-30-FUTURES",
+        "pid": "pid-1175152",
+        "name": "US 30 Cash (CFD)",
+	"publisher": "Bloomberg"
+    },
+    {
+        "category": "Equity Index Futures",
+        "ticker": "US-SPX-500-FUTURES",
+        "pid": "pid-1175153",
+        "name": "US 500 Cash (CFD)",
+	"publisher": "Bloomberg"
+	
+    },
+    {
+        "category": "Equity Index Futures",
+        "ticker": "DAX-FUTURES",
+        "pid": "pid-8826",
+        "name": "DAX FUTURES-(CFD)",
+	"publisher": "Bloomberg"
+    },
+    {
+        "category": "Equity Index Futures",
+        "ticker": "FTSE-FUTURES",
+        "pid": "pid-8838",
+        "name": "FTSE 100 FUTURES(CFD)",
+	"publisher": "Bloomberg"
+    },
+    {
+        "category": "Equity Index Futures",
+        "ticker": "CAC-40-FUTURES",
+        "pid": "pid-8853",
+        "name": "CAC40 FUTURES (CFD)",
+	"publisher": "Bloomberg"
+    },
+    {
+        "category": "Equity Index Futures",
+        "ticker": "IBOVESPA-FUTURES",
+        "pid": "pid-941612",
+        "name": "iBovespa Futures (CFD)",
+	"publisher": "Bloomberg"
+    },
+    {
+        "category": "Commoditiies Futures",
+        "ticker": "GOLD",
+        "pid": "pid-8830",
+        "name": "Gold",
+	"publisher": "Bloomberg"
+    },
+    {
+        "category": "Commoditiies Futures",
+        "ticker": "CRUDE-OIL-WTI",
+        "pid": "pid-8849",
+        "name": "Crudo Oil Futures (CFD)",
+	"publisher": "Bloomberg"
+    },
+    {
+        "category": "Commoditiies Futures",
+        "ticker": "US-SOYBEANS-FUTURES",
+        "pid": "pid-8916",
+        "name": "US Soybeans Future (CFD)",
+	"publisher": "Bloomberg"
+    },
+    {
+        "category": "Currencies",
+        "ticker": "EUR/USD",
+        "pid": "pid-1",
+        "name": "Euro US Dollar",
+	"publisher": "Bloomberg"
+    },
+    {
+        "category": "Currencies",
+        "ticker": "USD/MXN",
+        "pid": "pid-39",
+        "name": "US Dollar Mexican Peso",
+	"publisher": "Bloomberg"
+    },
+    {
+        "category": "Currencies",
+        "ticker": "GDP/USD",
+        "pid": "pid-2",
+        "name": "British Pound US Dollar",
+	"publisher": "Bloomberg"
+    },
+    {
+        "category": "Currencies",
+        "ticker": "USD/ZAR",
+        "pid": "pid-17",
+        "name": "US Dollar South African Rand",
+	"publisher": "Bloomberg"
+    },
+    {
+	"category": "Currencies",
+        "ticker": "USD/TRY",
+        "pid": "pid-18",
+        "name": "US Dollar Turkish Lira",
+	"publisher": "Bloomberg"
+    },
+    {
+	"category": "Currencies",
+        "ticker": "USD/BRL",
+        "pid": "pid-2103",
+        "name": "US Dollar Brazilian Real",
+	"publisher": "Bloomberg"
+    },
+    {
+	"category": "Currencies",
+        "ticker":  "US-DOLLAR-INDEX",
+        "pid": "pid-8827",
+        "name": "US Dollar Index Futures (CFD)",
+	"publisher": "Bloomberg"
+    },
+    {
+	"category": "Option Index Volatility",
+        "ticker": "VOLATILITY-SP-500",
+        "pid": "pid-44336",
+        "name": "S&P 500 ViX",
+	"publisher": "Bloomberg"
+    },
+    {
+	"category": "Bond",
+        "ticker": "US-10Y-BOND",
+        "pid": "pid-23705",
+        "name": "United States 10y Sovereign Bond",
+	"publisher": "Bloomberg"
+    },
+    {
+	"category": "Crytocurrency",
+        "ticker": "BITCOIN",
+        "pid": "pid-1057391",
+        "name": "Bitcoin",
+	"publisher": "Bloomberg"
+    },
+    {
+	"category": "Crytocurrency",
+        "ticker": "ETHEREUM",
+        "pid": "pid-1061443",
+        "name": "Ethereum",
+	"publisher": "Bloomberg"
+    }, 
+    {
+	"category": "ETF",
+        "ticker": "EWZ",
+        "pid": "pid-509",
+        "name": "IShares MSCI Brazilian ETF",
+	"publisher": "Bloomberg"
+    },
+    {
+	"category": "Equity",
+        "ticker": "PBR",
+        "pid": "pid-29595",
+        "name": "Petrobras ADR",
+	"publisher": "Bloomberg"
+    },
+    {
+	"category": "Equity",
+        "ticker": "VALE",
+        "pid": "pid-13059",
+        "name": "VALE ADR",
+	"publisher": "Bloomberg"
+    },
+    {
+	"category": "Equity",
+        "ticker": "XP",
+        "pid": "pid-1155836",
+        "name": "XP ADR",
+	"publisher": "Bloomberg"
+    },
+    {
+	"category": "Equity",
+        "ticker": "ITUB",
+        "pid": "pid-505",
+        "name": "ITUB ADR",
+	"publisher": "Bloomberg"
+    },
+    {
+	"category": "Equity",
+        "ticker": "AMBEV",
+        "pid": "pid-39315",
+        "name": "AMBEV ADR",
+	"publisher": "Bloomberg"
+    }
+]
