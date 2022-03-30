@@ -9,7 +9,7 @@ const { Channel, Broker } = require("./messageBroker.js")
 const { secToDict} = require('./helpers.js')
 
 const PORT = 8000
-const wss = new WebSocketServer({ port: PORT });
+const wss = new WebSocketServer({ host: "127.0.0.1", port: PORT });
 const broker = new Broker()
 const securities = JSON.parse(fs.readFileSync("securities.json"))
 
