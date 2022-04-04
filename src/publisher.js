@@ -4,7 +4,6 @@
 * https://gist.github.com/LucasMendesl/9899dde34ce50974170c0a97055a4bc2
 */
 
-
 const WebSocket = require('ws')
 const fs = require('fs')
 const path = require("path")
@@ -12,8 +11,14 @@ require('dotenv').config({
   path: path.resolve(__dirname, '../.env')
 })
 
+const HOST = process.env.HOST_BROKER
+const PORT = process.env.PORT_BROKER
+
 const securities = JSON.parse(fs.readFileSync("securities.json"))
-const wp = new WebSocket(process.env.MESSAGE_BROKER) //websock to server
+
+
+//websock to Messagebroker server
+const wp = new WebSocket(`ws://${HOST}:${PORT}`) 
 
 
 // Investing.com
@@ -57,18 +62,36 @@ ws.on('message', (message) => {
 })
 
 
+// source websoket
 ws.on('close', () => {
-    console.log('Connnection Closed!')
+    console.log('Connnection with source Closed!')
 })
+
+setInterval(() => {
+    if (ws.readyState === ws.OPEN)
+        ws.send(serialize(JSON.stringify({ "_event": "heartbeat", "data": "h" })));
+}, 2000)
 
 
 ws.on('error', err => {
     console.log(err)
 })
 
-//send heatbeats a constant time intervals
-setInterval(() => {
-    if (ws.readyState === ws.OPEN)
-        ws.send(serialize(JSON.stringify({ "_event": "heartbeat", "data": "h" })));
-}, 1000)
+
+// broker websoket
+wp.on('ping', function() {
+    // Delay should be equal to the interval at which your server
+    // sends out pings plus a conservative assumption of the latency.
+    clearTimeout(this.pingTimeout);
+    this.pingTimeout = setTimeout(() => {
+        this.terminate();
+    }, 30000 + 1000);
+})
+
+wp.on('close', () => {
+    console.log("Connection with Borker Closed!")
+    ws.terminate()
+})
+
+
 
