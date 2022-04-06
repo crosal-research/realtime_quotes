@@ -5,6 +5,7 @@
 
 // system and package imports
 const { WebSocketServer } = require('ws')
+const {createServer} = require('http')
 const fs = require('fs')
 const path = require("path")
 const {v4} = require('uuid')
@@ -17,12 +18,12 @@ const { Channel, Broker } = require("./messageBroker.js")
 const { secToDict} = require('./helpers.js')
 
 
-
 const HOST = process.env.HOST_BROKER
 const PORT = process.env.PORT_BROKER
 
 
-const wss = new WebSocketServer({ host: HOST, port: PORT });
+const server = createServer(options)
+const wss = new WebSocketServer({server});
 const broker = new Broker()
 const securities = JSON.parse(fs.readFileSync("securities.json"))
 
@@ -121,3 +122,5 @@ wss.on('close', () => {
 
 
 console.log(`Message Broker is up and running on port ${PORT}` )
+
+server.listen({ port: PORT ,hostname: HOST})
