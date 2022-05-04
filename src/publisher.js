@@ -18,7 +18,7 @@ const securities = JSON.parse(fs.readFileSync("securities.json"))
 
 
 //websock to Messagebroker server
-const wp = new WebSocket(`wss://${HOST}:${PORT}`) 
+const wp = new WebSocket(`ws://${HOST}:${PORT}`) 
 
 
 // Investing.com

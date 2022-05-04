@@ -5,7 +5,7 @@
 
 // system and package imports
 const { WebSocketServer } = require('ws')
-const {createServer} = require('https')
+const {createServer} = require('http')
 const fs = require('fs')
 const path = require("path")
 const {v4} = require('uuid')
@@ -22,8 +22,8 @@ const HOST = process.env.HOST_BROKER
 const PORT = process.env.PORT_BROKER
 
 const options = {
-    key: fs.readFileSync("../certificates/real_time.test.key"),
-    cert: fs.readFileSync("../certificates/real_time.test.crt")
+    // key: fs.readFileSync("../certificates/real_time.test.key"),
+    // cert: fs.readFileSync("../certificates/real_time.test.crt")
 }
 
 const server = createServer(options)
