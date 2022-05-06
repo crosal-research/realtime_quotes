@@ -5,6 +5,7 @@
 */
 
 const WebSocket = require('ws')
+const HttpsProxyAgent = require('https-proxy-agent')
 const fs = require('fs')
 const path = require("path")
 require('dotenv').config({
@@ -14,11 +15,21 @@ require('dotenv').config({
 const HOST = process.env.HOST_BROKER
 const PORT = process.env.PORT_BROKER
 
+
 const securities = JSON.parse(fs.readFileSync("securities.json"))
 
 
+//proxy agent
+const proxy = process.env.http_proxy || 'http://168.63.76.32:3128';
+console.log('using proxy server %j', proxy);
+const agent = new HttpsProxyAgent(proxy);
+
+
+
 //websock to Messagebroker server
-const wp = new WebSocket(`ws://${HOST}:${PORT}`) 
+
+const wp = new WebSocket(`ws:${HOST}:${PORT}`, 
+                         {agent: agetn}) 
 
 
 // Investing.com
@@ -78,7 +89,7 @@ ws.on('error', err => {
 })
 
 
-// broker websoket
+broker websoket
 wp.on('ping', function() {
     // Delay should be equal to the interval at which your server
     // sends out pings plus a conservative assumption of the latency.

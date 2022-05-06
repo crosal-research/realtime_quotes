@@ -58,7 +58,7 @@
     },
     {
         "category": "Commoditiies Futures",
-        "ticker": "NATURAL-GAL",
+        "ticker": "NATURAL-GAS",
         "pid": "pid-8849",
         "name": "Natural Gas Future Contract (CFD)",
 	"publisher": "Bloomberg"
