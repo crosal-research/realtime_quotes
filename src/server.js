@@ -37,6 +37,7 @@ const dictSec = secToDict(securities) // Object: pid => securites
 securities.forEach(s => {
     broker.add(new Channel(s.ticker))
 })
+let publishers = new Map()
 
 
 //clients connected
@@ -68,8 +69,13 @@ wss.on('connection', function connection(ws, req) {
 
         //Routing of messages
         const msgType = msg.type.toUpperCase()
-        switch (msgType) { //types: INPUT, SUBSCRIBE, UNSUBSCRIBE
+        switch (msgType) { //types: CONNECTION, INPUT, SUBSCRIBE, UNSUBSCRIBE
 
+        // Connections between publisher and broker
+        case 'CONNECTION':
+            publishers.set(msg.publisher, 'ACTIVE')
+            break
+            
         // broadcast to subscribers from publisher
         case 'INPUT': 
             delete msg.type
@@ -120,8 +126,24 @@ const pingInterval = setInterval(function ping() {
 }, 30000);
 
 
+// logs the publishers currently active
+const intervalPublishers = setInterval(function () {
+    console.log(`Publishers connected @ ${new Date()}:`)
+    if (publishers.size> 0){
+        publishers.forEach( (v,k,m)  => {
+            console.log(`publisher ${k} is ${v}`)
+        })
+    } else {
+        console.log("No publisher is feeding de broker")
+    }
+    console.log("\n")
+}, 2000)
+
+
 wss.on('close', () => {
     console.log("Shutting Broker Server!")
+    clearInterval(pingInterval);
+    clearInterval(intervalPublishers);
 })
 
 

@@ -58,13 +58,6 @@
     },
     {
         "category": "Commoditiies Futures",
-        "ticker": "NATURAL-GAS",
-        "pid": "pid-8849",
-        "name": "Natural Gas Future Contract (CFD)",
-	"publisher": "Bloomberg"
-    },
-    {
-        "category": "Commoditiies Futures",
         "ticker": "US-SOYBEANS-FUTURES",
         "pid": "pid-8916",
         "name": "US Soybeans Future (CFD)",
@@ -130,21 +123,7 @@
 	"category": "Bond",
         "ticker": "US-10Y-BOND",
         "pid": "pid-23705",
-        "name": "United States 10 years Sovereign Bond",
-	"publisher": "Bloomberg"
-    },
-    {
-	"category": "Bond",
-        "ticker": "US-2Y-BOND",
-        "pid": "pid-23701",
-        "name": "United States 2 years Sovereign Bond",
-	"publisher": "Bloomberg"
-    },
-    {
-	"category": "Bond",
-        "ticker": "GER-10Y-BOND",
-        "pid": "pid-23701",
-        "name": "Germany 10 years Sovereign Bond",
+        "name": "United States 10y Sovereign Bond",
 	"publisher": "Bloomberg"
     },
     {
@@ -160,6 +139,34 @@
         "pid": "pid-1061443",
         "name": "Ethereum",
 	"publisher": "Bloomberg"
+    }, 
+    {
+	"category": "Crytocurrency",
+        "ticker": "SOL/USD",
+        "pid": "5~CCCAGG~SOL~USD",
+        "name": "Solana",
+	"publisher": "Cryptocompare"
+    },
+    {
+	"category": "Crytocurrency",
+        "ticker": "USDT/USD",
+        "pid": "5~CCCAGG~USDT~USD",
+        "name": "Tether",
+	"publisher": "Cryptocompare"
+    },
+    {
+	"category": "Crytocurrency",
+        "ticker": "UST/USD",
+        "pid": "5~CCCAGG~UST~USD",
+        "name": "TerraUSD",
+	"publisher": "Cryptocompare"
+    },
+    {
+	"category": "Crytocurrency",
+        "ticker": "BNB/USD",
+        "pid": "5~CCCAGG~BNB~USD",
+        "name": "Binance",
+	"publisher": "Cryptocompare"
     }, 
     {
 	"category": "ETF",
