@@ -17,10 +17,10 @@ let infoSec = new Map(securities.map(s => {
     return [ticker, {
         type: 'INPUT',
         ticker: ticker,
-        price: '-',
-        time: '-',
+        last_numeric: '-',
+        timestamp: '-',
         open: '-',
-        change: '-',
+        pcp: '-',
         publisher: 'Cryptocompare'
     }]
 }))
@@ -34,9 +34,9 @@ ws.on('open', function open(data){
     console.log("Hello from Server")
     const msg = { 
         "action": "SubAdd",
-//        "subs": securities.map(s => s.pid) 
-        "subs": [securities[1]]
+        "subs": securities.map(s => s.pid) 
     }
+    ws.send(JSON.stringify(msg))
 })
 
 wp.on('open', function open(data){
@@ -53,10 +53,10 @@ ws.on('message', function message(data){
     const ticker = `${resp.FROMSYMBOL}\/${resp.TOSYMBOL}`
     if (resp.TYPE === '5' && resp.LASTUPDATE && resp.PRICE){
         sec = infoSec.get(ticker)
-        sec.price = resp.PRICE,
-        sec.time = resp.LASTUPDATE,
+        sec.last_numeric = resp.PRICE,
+        sec.timestamp = resp.LASTUPDATE,
         sec.open = resp.OPENDAY ? resp.OPENDAY : sec.open,
-        sec.change = sec.open !== "-" ? Number(sec.price)/Number(sec.open) -1 : "-"
+        sec.pcp = sec.open !== "-" ? Number(sec.last_numeric)/Number(sec.open) -1 : "-"
         infoSec.set(sec)
         wp.send(JSON.stringify(sec))
     }
