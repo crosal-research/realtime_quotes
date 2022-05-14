@@ -29,8 +29,18 @@ function secToDict(securities){
     return dictSec
 }
 
+/**
+ * Converts a number to a String with percentage (%) sign
+ * @param {number} num - number to be converted
+ * @return {String} 
+ */
+function convertTopcp(num) {
+    return `${String(num.toFixed(2))}%`
+}
+
 
 module.exports = {
     convertToPids: convertToPids,
-    secToDict: secToDict
+    secToDict: secToDict,
+    convertTopcp: convertTopcp
 }

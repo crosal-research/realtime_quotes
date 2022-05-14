@@ -1,6 +1,7 @@
 const WebSockets = require("ws")
 const fs = require("fs")
 const path = require('path')
+const { convertTopcp } = require('./helpers.js')
 require('dotenv').config({
   path: path.resolve(__dirname, '../.env')
 })
@@ -56,7 +57,7 @@ ws.on('message', function message(data){
         sec.last_numeric = resp.PRICE,
         sec.timestamp = resp.LASTUPDATE,
         sec.open = resp.OPENDAY ? resp.OPENDAY : sec.open,
-        sec.pcp = sec.open !== "-" ? Number(sec.last_numeric)/Number(sec.open) -1 : "-"
+        sec.pcp = sec.open !=='-' ? convertTopcp((Number(sec.last_numeric)/Number(sec.open) -1)*100) : "-"
         infoSec.set(sec)
         wp.send(JSON.stringify(sec))
     }
